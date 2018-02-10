@@ -1,12 +1,17 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 import styles from './MenuItem.css';
 
 const menuItem = (props) => (
-    <div onClick={ props.menuAction } className={styles.MenuItem}>
+    <NavLink
+        to={props.link}
+        className={styles.MenuItem}>
+
         <div>Icon</div>
         <div>{ props.label }</div>
-    </div>
+
+    </NavLink>
 );
 
 export default menuItem;

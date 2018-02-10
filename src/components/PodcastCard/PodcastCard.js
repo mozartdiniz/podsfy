@@ -1,9 +1,12 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
+
+import style from './PodcastCard.css';
 
 const podcastCard = (props) => (
-    <div>
+    <NavLink to='/podcast' className={style.PodcastCard}>
         <div>{props.podcast.title}</div>
-    </div>
+    </NavLink>
 );
 
 export default podcastCard;

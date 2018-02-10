@@ -1,0 +1,8 @@
+.PodcastCard {
+    width: 150px;
+    height: 200px;
+    margin: 7px;
+    float: left;
+    position: relative;
+    box-shadow: 1px 1px 6px rgba(0,0,0,0.16);
+}

@@ -7,10 +7,10 @@ import style from './Menu.css';
 const menu = (props) => (
     <div className={style.Menu}>
         <div>Logo maybe</div>
-        <MenuItem label="Profile" />
-        <MenuItem label="Home" />
-        <MenuItem label="Library" />
-        <MenuItem label="Categories" />
+        <MenuItem label="Profile"    link="/"/>
+        <MenuItem label="Home"       link="/"/>
+        <MenuItem label="Library"    link="/"/>
+        <MenuItem label="Categories" link="/"/>
     </div>
 );
 
