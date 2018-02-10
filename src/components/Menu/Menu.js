@@ -2,8 +2,10 @@ import React from 'react';
 
 import MenuItem from './MenuItem/MenuItem';
 
+import style from './Menu.css';
+
 const menu = (props) => (
-    <div>
+    <div className={style.Menu}>
         <div>Logo maybe</div>
         <MenuItem label="Profile" />
         <MenuItem label="Home" />
