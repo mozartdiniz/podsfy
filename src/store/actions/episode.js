@@ -6,3 +6,17 @@ export const loadPodcastEpisodes = (podcastId) => {
         podcastId,
     };
 };
+
+export const selectPodcastEpisodes = (podcastId) => {
+    return {
+        type: actionTypes.SELECT_PODCAST_EPISODES,
+        podcastId,
+    };
+};
+
+export const selectPodcastEpisode = (episodeId) => {
+    return {
+        type: actionTypes.SELECT_PODCAST_EPISODE,
+        episodeId,
+    };
+};

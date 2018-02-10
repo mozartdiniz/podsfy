@@ -1,5 +1,7 @@
 export {
     loadPodcastEpisodes,
+    selectPodcastEpisode,
+    selectPodcastEpisodes,
 } from './episode';
 export {
     playPodcastEpisode,

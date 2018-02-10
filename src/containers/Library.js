@@ -31,7 +31,10 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        selectPodcast: (podcastId) => dispatch(actions.selectPodcast(podcastId)),
+        selectPodcast: (podcastId) => {
+            dispatch(actions.selectPodcast(podcastId));
+            dispatch(actions.selectPodcastEpisodes(podcastId));
+        },
     }
 }
 

@@ -13,8 +13,11 @@ class PodcastScreen extends Component {
             <div>
                 <Menu />
                 <div>{ this.props.podcast.title }</div>
-                <EpisodeList episodes={[]} />
-                <Player podcast={this.props.podcast} episode={this.props.episode}/>
+                <EpisodeList episodes={this.props.episodes} onSelectEpisode={this.props.playEpisode}/>
+                <Player
+                    podcast={this.props.podcast}
+                    episode={this.props.episode}
+                />
             </div>
         );
     }
@@ -22,7 +25,7 @@ class PodcastScreen extends Component {
 
 const mapStateToProps = state => {
     return {
-        episodes: state.episode.episodes,
+        episodes: state.episode.selectedEpisodes,
         podcast: state.podcast.selectedPodcast,
         episode: state.episode.selectedEpisode,
         playing: state.player.playing,
@@ -31,7 +34,10 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        playEpisode: (episodeId) => dispatch(actions.playPodcastEpisode(episodeId)),
+        playEpisode: (episodeId) => {
+            dispatch(actions.selectPodcastEpisode(episodeId));
+            dispatch(actions.playPodcastEpisode(episodeId));
+        },
     }
 }
 
