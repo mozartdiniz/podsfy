@@ -1,7 +1,16 @@
 import React from 'react';
 
-export default episodeList = (props) => (
+import EpisodeListItem from '../EpisodeListItem/EpisodeListItem';
+
+const episodeList = (props) => (
     <div>
-        episodes
+        { props.episodes.map((episode) =>
+            <EpisodeListItem
+                episode={episode}
+                onSelectEpisode={props.onSelectEpisode}
+            />)
+        }
     </div>
 );
+
+export default episodeList;

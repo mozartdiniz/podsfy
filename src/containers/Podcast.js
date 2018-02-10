@@ -1,20 +1,38 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 import Menu from '../components/Menu/Menu';
+import Player from '../components/Player/Player';
+import EpisodeList from '../components/EpisodeList/EpisodeList';
 
-export default class PodcastScreen extends Component {
-    podcast = {
-        id: 1,
-        title: 'Rapadura Cast',
-    }
+import * as actions from '../store/actions/index';
 
+class PodcastScreen extends Component {
     render () {
         return (
             <div>
                 <Menu />
-                <div>Podcast name and so on</div>
-                <div>Podcast episodes</div>
+                <div>{ this.props.podcast.title }</div>
+                <EpisodeList episodes={[]} />
+                <Player podcast={this.props.podcast} episode={this.props.episode}/>
             </div>
         );
     }
 }
+
+const mapStateToProps = state => {
+    return {
+        episodes: state.episode.episodes,
+        podcast: state.podcast.selectedPodcast,
+        episode: state.episode.selectedEpisode,
+        playing: state.player.playing,
+    };
+}
+
+const mapDispatchToProps = dispatch => {
+    return {
+        playEpisode: (episodeId) => dispatch(actions.playPodcastEpisode(episodeId)),
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(PodcastScreen);
