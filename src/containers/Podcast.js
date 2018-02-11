@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import Menu from '../components/Menu/Menu';
-import Player from '../components/Player/Player';
 import EpisodeList from '../components/EpisodeList/EpisodeList';
 
 import * as actions from '../store/actions/index';
@@ -18,10 +17,6 @@ class PodcastScreen extends Component {
                 <Menu />
                 <h1>{ this.props.podcast.title }</h1>
                 <EpisodeList episodes={this.props.episodes} onSelectEpisode={this.props.playEpisode}/>
-                <Player
-                    podcast={this.props.podcast}
-                    episode={this.props.episode}
-                />
             </div>
         );
     }
@@ -39,9 +34,9 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch, getState) => {
     return {
         loadPodcastInfo: (podcastId) => dispatch(actions.loadPodcastInfo(podcastId)),
-        playEpisode: (episodeId) => {
-            dispatch(actions.selectPodcastEpisode(episodeId));
-            dispatch(actions.playPodcastEpisode(episodeId));
+        playEpisode: (episode) => {
+            dispatch(actions.selectPodcastEpisode(episode));
+            dispatch(actions.playPodcastEpisode(episode));
         },
     }
 }

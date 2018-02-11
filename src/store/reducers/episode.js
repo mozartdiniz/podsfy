@@ -16,12 +16,16 @@ const savePodcastEpisodes = (state, action) => ({
 
 const selectPodcastEpisodes = (state, action) => ({
     ...state,
-    selectedEpisodes: state.episodes.filter((episode) => episode.podcastId === action.podcastId),
+    selectedEpisodes: {
+        ...action.episode
+    },
 });
 
 const selectPodcastEpisode = (state, action) => ({
     ...state,
-    selectedEpisode: state.selectedEpisodes.filter((episode) => episode.id === action.episodeId)[0],
+    selectedEpisode: {
+        ...action.episode
+    },
 });
 
 const reducer = (state = initialState, action) => {

@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 
 import Menu from '../components/Menu/Menu';
 import PodcastCardList from '../components/PodcastCardList/PodcastCardList';
-import Player from '../components/Player/Player';
 
 import * as actions from '../store/actions/index';
 
@@ -14,7 +13,6 @@ class LibraryScreen extends Component {
                 <Menu />
                 <h1>Podcasts</h1>
                 <PodcastCardList podcasts={this.props.podcasts} onSelectPodcast={this.props.selectPodcast}/>
-                <Player podcast={this.props.podcast} episode={this.props.episode}/>
             </div>
         );
     }

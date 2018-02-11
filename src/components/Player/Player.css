@@ -1,6 +1,8 @@
 .Player {
-    width: 200px;
+    width: 370px;
     height: 200px;
     border: 1px solid black;
-    float: right;
+    right: 0;
+    position: absolute;
+    top: 0;
 }

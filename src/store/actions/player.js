@@ -1,9 +1,9 @@
 import * as actionTypes from './actionTypes';
 
-export const playPodcastEpisode = (episodeId) => {
+export const playPodcastEpisode = (episode) => {
     return {
         type: actionTypes.PLAY_PODCAST_EPISODES,
-        episodeId,
+        episode,
     };
 };
 

@@ -28,9 +28,9 @@ export const selectPodcastEpisodes = (podcastId) => {
     };
 };
 
-export const selectPodcastEpisode = (episodeId) => {
+export const selectPodcastEpisode = (episode) => {
     return {
         type: actionTypes.SELECT_PODCAST_EPISODE,
-        episodeId,
+        episode,
     };
 };

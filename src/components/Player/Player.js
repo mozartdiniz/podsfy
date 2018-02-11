@@ -14,6 +14,7 @@ class Player extends Component {
                 <button onClick={() => { this.props.playEpisode(this.props.episode.id); }}>
                     { (this.props.playing) ? 'Pause' : 'Play' }
                 </button>
+                <audio src={this.props.episode.mp3URL} controls autoPlay />
             </div>
         );
     }
