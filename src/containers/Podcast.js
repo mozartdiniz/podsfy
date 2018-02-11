@@ -16,7 +16,7 @@ class PodcastScreen extends Component {
         return (
             <div>
                 <Menu />
-                <div>{ this.props.podcast.title }</div>
+                <h1>{ this.props.podcast.title }</h1>
                 <EpisodeList episodes={this.props.episodes} onSelectEpisode={this.props.playEpisode}/>
                 <Player
                     podcast={this.props.podcast}
@@ -38,7 +38,10 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        selectPodcast: (podcastId) => dispatch(actions.selectPodcast(podcastId)),
+        selectPodcast: (podcastId) => {
+            dispatch(actions.selectPodcast(podcastId));
+            dispatch(actions.selectPodcastEpisodes(podcastId));
+        },
         playEpisode: (episodeId) => {
             dispatch(actions.selectPodcastEpisode(episodeId));
             dispatch(actions.playPodcastEpisode(episodeId));

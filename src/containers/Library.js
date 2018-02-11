@@ -11,8 +11,8 @@ class LibraryScreen extends Component {
     render () {
         return (
             <div>
-                <h1>Podcasts</h1>
                 <Menu />
+                <h1>Podcasts</h1>
                 <PodcastCardList podcasts={this.props.podcasts} onSelectPodcast={this.props.selectPodcast}/>
                 <Player podcast={this.props.podcast} episode={this.props.episode}/>
             </div>

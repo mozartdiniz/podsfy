@@ -2,8 +2,8 @@ import * as actionTypes from '../actions/actionTypes';
 
 const initialState = {
     episodes: [{
-        id: 1,
-        podcastId: 1,
+        id: '1',
+        podcastId: '1',
         title: 'Shazam! &#124; Diretor revela como será o logo das Indústrias Silvana no filme',
         description: `<p>Alguns usuários do <em>Reddit </em>estavam se questionando como seria legal se as primeiras imagens oficiais de <strong>&#8220;Shazam!&#8221; </strong>fossem postadas naquele site, quando o próprio diretor do filme <strong>David F. Sandberg</strong> (<em>“Annabelle 2: A Criação do Mal”</em>) postou a primeira imagem do logo das indústrias do vilão, <strong>Dr. Silvana</strong>. Vale ressaltar que, quando da publicação das primeiras histórias em quadrinhos do Shazam no Brasil, o nome &#8220;Sivana&#8221; foi adaptado como &#8220;Silvana&#8221;. Veja a imagem abaixo:</p>
         <p><img class="alignnone size-medium wp-image-477831" src="http://cinemacomrapadura.com.br/imagens/2018/02/20180210-sivana-shazam-1-461x615.jpg" alt="" width="461" height="615" srcset="http://cinemacomrapadura.com.br/imagens/2018/02/20180210-sivana-shazam-1-461x615.jpg 461w, http://cinemacomrapadura.com.br/imagens/2018/02/20180210-sivana-shazam-1.jpg 628w" sizes="(max-width: 461px) 100vw, 461px" /></p>
@@ -11,8 +11,8 @@ const initialState = {
         <p>Além de Zachary Levi (<em>&#8220;Thor: Ragnarok&#8221;</em>)<em>,</em> que interpreta o herói, o elenco ainda conta com Asher Angel (da série “<em>Andi Mack</em>“) como o jovem Billy Batson, Mark Strong (“<em>Kingsman: O Círculo Dourado </em>“), Jack Dylan Grazer (“<em>It: A Coisa</em>“), Ron Cephas Jones e Faithe C. Herman (ambos da série “<em>This Is U</em>s”).</p>
         <p>“Shazam!” chega aos cinemas em 05 de abril de 2019.`,
     }, {
-        id: 2,
-        podcastId: 1,
+        id: '2',
+        podcastId: '1',
         title: 'Han Solo: Uma História Star Wars &#124; Kathleen Kennedy explica saída de Chris Miller e Phil Lord',
         description: `<p>Em entrevista para o <em>Entertainment Weekly,</em> a presidente da <em>Lucasfilm</em>, <strong>Kathleen Kennedy</strong>, explicou a razão da saída dos diretores <strong>Chris Miller e Phil Lord</strong> (<em>&#8220;Uma Aventura Lego&#8221;</em>) de <strong>&#8220;Han Solo: Uma História Star Wars&#8221;</strong>. Eles foram trocados por <strong>Ron Howard </strong>(<em>&#8220;Inferno&#8221;</em>) durante as filmagens, alegando diferenças criativas. Ela relatou que:</p>
         <blockquote><p><strong><em>&#8220;(Chris) Miller e (Phil) Lord são hilários, mas eles têm experiência em animações e comédias, e quando você está fazendo um filme desse tipo há um grande espaço para improvisações, elas são feitas o tempo inteiro, mas precisa estar inserido em uma estrutura específica ou você não consegue terminar o trabalho e não consegue antecipar as coisas para já ter tudo pronto. Então acabou literalmente sendo sobre o processo. Apenas sobre entregar no tempo certo.&#8221;</em></strong></p></blockquote>
@@ -21,8 +21,8 @@ const initialState = {
         <p>O elenco conta ainda com Emilia Clarke (“<em>Como Eu Era Antes de Você</em>“), Woody Harrelson (“<em>Três Anúncios Para Um Crime</em>“), Phoebe Waller-Bridge (“<em>(Des)encontro Perfeito</em>“) e Paul Bettany (“<em>Capitão América”Guerra Civil</em>“).</p>
         <p>“Han Solo: Uma História Star Wars” estreia dia 24 de maio de 2018.`,
     }, {
-        id: 3,
-        podcastId: 2,
+        id: '3',
+        podcastId: '2',
         title: 'NerdCast 606 - Segredos dos Restaurantes',
         description: `Neste podcast: Coma pastel de picanha, não brigue na cozinha e descubra todos os segredos do funcionamento de um restaurante.
         ARTE DA VITRINE:  André Carvalho
@@ -55,8 +55,8 @@ const initialState = {
              http://radiofobia.com.br
         `,
     }, {
-        id: 4,
-        podcastId: 2,
+        id: '4',
+        podcastId: '2',
         title: 'NerdCast 605 - Batalha de Crossovers 7',
         description: `Neste podcast: Encontraremos de Saitama a Mario, de Orcs a Replicantes. Nosso octógono de crossovers está cheio novamente para mais uma batalha!
         ARTE DA VITRINE:  André Carvalho
