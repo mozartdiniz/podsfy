@@ -6,6 +6,8 @@ import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
 
 import './index.css';
+
+//Components
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import episodeReducer from './store/reducers/episode';

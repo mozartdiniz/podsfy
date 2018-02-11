@@ -20,7 +20,7 @@ class LibraryScreen extends Component {
     }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
     return {
         podcasts: state.podcast.library,
         podcast: state.podcast.selectedPodcast,
@@ -29,7 +29,7 @@ const mapStateToProps = state => {
     };
 }
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
     return {
         selectPodcast: (podcastId) => {
             dispatch(actions.selectPodcast(podcastId));

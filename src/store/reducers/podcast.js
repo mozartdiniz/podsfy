@@ -5,17 +5,23 @@ const initialState = {
         id: '1',
         title: 'Cinema com Rapadura',
         thumb: 'http://cinemacomrapadura.com.br/imagens/2016/03/20160301-itunes-ccr2.jpg',
+        feedURL: 'http://www.cinemacomrapadura.com.br/rapaduracast/rapaduracast.xml',
     }, {
         id: '2',
         title: 'NerdCast',
         description: 'O mundo vira piada no Jovem Nerd',
         thumb: 'https://jovemnerd.com.br/wp-content/themes/jovemnerd/assets/images/nc-feed.jpg',
+        feedURL: 'https://jovemnerd.com.br/feed-nerdcast/',
     }, {
         id: '3',
-        title: 'Podcast MDM'
+        title: 'Podcast MDM',
+        thumb: 'http://melhoresdomundo.net/wp-content/uploads/2014/04/mdm-podcast-itunes_2.png',
+        feedURL: 'http://feeds.feedburner.com/MdMPodcast?format=xml',
     }, {
         id: '4',
-        title: 'Mamilos'
+        title: 'Mamilos',
+        thumb: '',
+        feedURL: 'http://www.b9.com.br/podcasts/mamilos/feed/',
     }],
     selectedPodcast: {},
     searchResult: [],

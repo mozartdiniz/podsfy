@@ -1,5 +1,5 @@
 export {
-    loadPodcastEpisodes,
+    loadPodcastInfo,
     selectPodcastEpisode,
     selectPodcastEpisodes,
 } from './episode';

@@ -9,7 +9,7 @@ import * as actions from '../store/actions/index';
 
 class PodcastScreen extends Component {
     componentDidMount() {
-        this.props.selectPodcast(this.props.match.params.id);
+        this.props.loadPodcastInfo(this.props.match.params.id);
     }
 
     render () {
@@ -27,21 +27,18 @@ class PodcastScreen extends Component {
     }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
     return {
-        episodes: state.episode.selectedEpisodes,
+        episodes: state.episode.episodes,
         podcast: state.podcast.selectedPodcast,
         episode: state.episode.selectedEpisode,
         playing: state.player.playing,
     };
 }
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch, getState) => {
     return {
-        selectPodcast: (podcastId) => {
-            dispatch(actions.selectPodcast(podcastId));
-            dispatch(actions.selectPodcastEpisodes(podcastId));
-        },
+        loadPodcastInfo: (podcastId) => dispatch(actions.loadPodcastInfo(podcastId)),
         playEpisode: (episodeId) => {
             dispatch(actions.selectPodcastEpisode(episodeId));
             dispatch(actions.playPodcastEpisode(episodeId));
