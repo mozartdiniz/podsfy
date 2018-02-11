@@ -8,6 +8,10 @@ import EpisodeList from '../components/EpisodeList/EpisodeList';
 import * as actions from '../store/actions/index';
 
 class PodcastScreen extends Component {
+    componentDidMount() {
+        this.props.selectPodcast(this.props.match.params.id);
+    }
+
     render () {
         return (
             <div>
@@ -34,6 +38,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
+        selectPodcast: (podcastId) => dispatch(actions.selectPodcast(podcastId)),
         playEpisode: (episodeId) => {
             dispatch(actions.selectPodcastEpisode(episodeId));
             dispatch(actions.playPodcastEpisode(episodeId));

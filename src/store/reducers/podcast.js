@@ -2,19 +2,19 @@ import * as actionTypes from '../actions/actionTypes';
 
 const initialState = {
     library: [{
-        id: 1,
+        id: '1',
         title: 'Cinema com Rapadura',
         thumb: 'http://cinemacomrapadura.com.br/imagens/2016/03/20160301-itunes-ccr2.jpg',
     }, {
-        id: 2,
+        id: '2',
         title: 'NerdCast',
         description: 'O mundo vira piada no Jovem Nerd',
         thumb: 'https://jovemnerd.com.br/wp-content/themes/jovemnerd/assets/images/nc-feed.jpg',
     }, {
-        id: 3,
+        id: '3',
         title: 'Podcast MDM'
     }, {
-        id: 4,
+        id: '4',
         title: 'Mamilos'
     }],
     selectedPodcast: {},
