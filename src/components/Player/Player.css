@@ -1,8 +1,9 @@
 .Player {
-    width: 370px;
-    height: 200px;
-    border: 1px solid black;
-    right: 0;
-    position: absolute;
-    top: 0;
+    background: white;
+
+    order: 0;
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: 200px;
+    align-self: auto;
 }

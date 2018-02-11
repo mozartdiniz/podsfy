@@ -11,3 +11,13 @@
 .PodcastCard img {
     width: 150px;
 }
+
+.PodcastName {
+    padding: 1px 6px;
+}
+
+.PodcastCard a {
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+}

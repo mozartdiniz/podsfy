@@ -1,6 +1,10 @@
 .Layout {
-    background: #e2e2e2;
-    position: relative;
-    float: left;
+    display: flex;
     width: 100%;
+
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    align-content: stretch;
 }

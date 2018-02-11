@@ -4,9 +4,8 @@ import style from './EpisodeListItem.css';
 
 const episodeListItem = (props) => (
     <div className={style.EpisodeListItem}>
-        <h1>{ props.episode.title }</h1>
-        <h1>{ props.episode.mp3URL }</h1>
-        <p>{ props.episode.description }</p>
+        <h2>{ props.episode.title }</h2>
+
         <button onClick={() => { props.onSelectEpisode(props.episode) }}>
             Play
         </button>

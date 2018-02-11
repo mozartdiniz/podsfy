@@ -6,6 +6,8 @@ import EpisodeList from '../components/EpisodeList/EpisodeList';
 
 import * as actions from '../store/actions/index';
 
+import style from '../App.css';
+
 class PodcastScreen extends Component {
     componentDidMount() {
         this.props.loadPodcastInfo(this.props.match.params.id);
@@ -13,10 +15,12 @@ class PodcastScreen extends Component {
 
     render () {
         return (
-            <div>
+            <div className={style.ContainerWrapper}>
                 <Menu />
-                <h1>{ this.props.podcast.title }</h1>
-                <EpisodeList episodes={this.props.episodes} onSelectEpisode={this.props.playEpisode}/>
+                <div className={style.MainContent}>
+                    <h1>{ this.props.podcast.title }</h1>
+                    <EpisodeList episodes={this.props.episodes} onSelectEpisode={this.props.playEpisode}/>
+                </div>
             </div>
         );
     }

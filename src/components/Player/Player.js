@@ -11,6 +11,7 @@ class Player extends Component {
             <div className={style.Player}>
                 <h2>{(this.props.podcast) ? this.props.podcast.title : null}</h2>
                 <h3>{(this.props.episode) ? this.props.episode.title : null}</h3>
+                <div dangerouslySetInnerHTML={{__html: this.props.episode.description}}></div>
                 <button onClick={() => { this.props.playEpisode(this.props.episode.id); }}>
                     { (this.props.playing) ? 'Pause' : 'Play' }
                 </button>

@@ -6,13 +6,17 @@ import PodcastCardList from '../components/PodcastCardList/PodcastCardList';
 
 import * as actions from '../store/actions/index';
 
+import style from '../App.css';
+
 class LibraryScreen extends Component {
     render () {
         return (
-            <div>
+            <div className={style.ContainerWrapper}>
                 <Menu />
-                <h1>Podcasts</h1>
-                <PodcastCardList podcasts={this.props.podcasts} onSelectPodcast={this.props.selectPodcast}/>
+                <div className={style.MainContent}>
+                    <h1>Library</h1>
+                    <PodcastCardList podcasts={this.props.podcasts} onSelectPodcast={this.props.selectPodcast}/>
+                </div>
             </div>
         );
     }

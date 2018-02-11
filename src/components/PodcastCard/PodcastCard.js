@@ -5,9 +5,9 @@ import style from './PodcastCard.css';
 
 const podcastCard = (props) => (
     <div className={style.PodcastCard}>
-        <NavLink to={`/podcast/${props.podcast.id}`} >
+        <NavLink to={`/podcast/${props.podcast.id}`}>
             <img src={props.podcast.thumb} alt="Podcast thumbnail"/>
-            <div>{props.podcast.title}</div>
+            <div className={style.PodcastName}>{props.podcast.title}</div>
         </NavLink>
     </div>
 
