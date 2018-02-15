@@ -9,7 +9,7 @@ export const playPodcastEpisode = (episode) => {
 
 export const pausePodcastEpisode = (episodeId) => {
     return {
-        type: actionTypes.ADD_NEW_PODCAST,
+        type: actionTypes.PAUSE_PODCAST_EPISODES,
         episodeId,
     };
 };

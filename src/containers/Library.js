@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import PodcastCardList from '../components/PodcastCardList/PodcastCardList';
+import SubscribePodcast from '../components/SubscribePodcast/SubscribePodcast';
 
 import * as actions from '../store/actions/index';
 
@@ -13,7 +14,11 @@ class LibraryScreen extends Component {
             <div className={style.ContainerWrapper}>
                 <div className={style.MainContent}>
                     <h1>Library</h1>
-                    <PodcastCardList podcasts={this.props.podcasts} onSelectPodcast={this.props.selectPodcast}/>
+                    {
+                        (this.props.podcasts.length)
+                            ? <PodcastCardList podcasts={this.props.podcasts} onSelectPodcast={this.props.selectPodcast}/>
+                            : <SubscribePodcast />
+                    }
                 </div>
             </div>
         );

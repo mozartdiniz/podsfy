@@ -16,9 +16,7 @@ export {
     logoutUser,
 } from './auth';
 export {
-    searchPodcast,
-    singPodcast,
-    addNewPodcast,
+    loadPodcastFromFeedURL,
     loadLibrary,
     selectPodcast,
 } from './podcast';

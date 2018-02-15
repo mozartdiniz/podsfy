@@ -1,25 +1,21 @@
 import * as actionTypes from './actionTypes';
 
-export const searchPodcast = (text) => {
-    return {
-        type: actionTypes.SEARCH_PODCAST,
-        text,
-    };
+import loadFeed from '../../utils/loadFeed';
+
+export const loadPodcastFromFeedURL = (feedURL) => {
+    return (dispatch) => {
+        loadFeed(feedURL).then((podcast) => {
+            dispatch(subscribePodcast(podcast));
+        });
+    }
 };
 
-export const singPodcast = (id) => {
+export const subscribePodcast = (podcast) => {
     return {
-        type: actionTypes.SIGN_PODCAST,
-        id,
-    };
-};
-
-export const addNewPodcast = (podcast) => {
-    return {
-        type: actionTypes.ADD_NEW_PODCAST,
+        type: actionTypes.SUBSCRIBE_PODCAST,
         podcast,
     };
-};
+}
 
 export const loadLibrary = () => {
     return {
