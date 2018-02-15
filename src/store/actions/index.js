@@ -8,6 +8,14 @@ export {
     pausePodcastEpisode,
 } from './player';
 export {
+    checkIfIsAuthenticated,
+    userIsAuthenticated,
+    createUser,
+    storeUser,
+    loginUser,
+    logoutUser,
+} from './auth';
+export {
     searchPodcast,
     singPodcast,
     addNewPodcast,

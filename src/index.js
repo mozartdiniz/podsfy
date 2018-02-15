@@ -7,12 +7,15 @@ import thunk from 'redux-thunk';
 
 import './index.css';
 
+import './conf/firebase';
+
 //Components
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import episodeReducer from './store/reducers/episode';
 import playerReducer from './store/reducers/player';
 import podcastReducer from './store/reducers/podcast';
+import authReducer from './store/reducers/auth';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
@@ -20,6 +23,7 @@ const rootReducer = combineReducers({
     episode: episodeReducer,
     player: playerReducer,
     podcast: podcastReducer,
+    auth: authReducer,
 });
 
 const store = createStore(rootReducer, composeEnhancers(

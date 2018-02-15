@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import Menu from '../components/Menu/Menu';
 import EpisodeList from '../components/EpisodeList/EpisodeList';
 
 import * as actions from '../store/actions/index';
@@ -16,7 +15,6 @@ class PodcastScreen extends Component {
     render () {
         return (
             <div className={style.ContainerWrapper}>
-                <Menu />
                 <div className={style.MainContent}>
                     <h1>{ this.props.podcast.title }</h1>
                     <EpisodeList episodes={this.props.episodes} onSelectEpisode={this.props.playEpisode}/>

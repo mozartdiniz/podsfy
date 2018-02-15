@@ -6,6 +6,13 @@ import style from './Menu.css';
 
 const menu = (props) => (
     <div className={style.Menu}>
+        <div>
+            {
+                (props.userIsAuthenticated)
+                    ? <button onClick={props.logoutAction}>Log out</button>
+                    : null
+            }
+        </div>
         <div>Logo maybe</div>
         <MenuItem label="Profile"    link="/"/>
         <MenuItem label="Home"       link="/"/>
