@@ -33,6 +33,10 @@ const extractName = (feedItem) => {
 }
 
 const extractDescription = (feedItem) => {
+    if (feedItem.meta && feedItem.meta['rss:description']) {
+        return feedItem.meta['rss:description']['#'];
+    }
+
     if (feedItem['rss:description']) {
         return feedItem['rss:description']['#'];
     }
