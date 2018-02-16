@@ -30,7 +30,6 @@ class LoginScreen extends Component {
     render() {
         return (
             <div>
-                <h1>{JSON.stringify(this.props.userIsAuthenticated)}</h1>
                 Email: <input type="text" autoComplete="new-password" onChange={this.setEmail}/> <br />
                 Password: <input type="password" autoComplete="new-password" onChange={this.setPassword}/> <br />
                 <button onClick={() => {this.props.login(this.state.email, this.state.password)}}>

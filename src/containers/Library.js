@@ -14,11 +14,8 @@ class LibraryScreen extends Component {
             <div className={style.ContainerWrapper}>
                 <div className={style.MainContent}>
                     <h1>Library</h1>
-                    {
-                        (this.props.podcasts.length)
-                            ? <PodcastCardList podcasts={this.props.podcasts} onSelectPodcast={this.props.selectPodcast}/>
-                            : <SubscribePodcast />
-                    }
+                    <SubscribePodcast thereArePodcasts={this.props.podcasts.length}/>
+                    <PodcastCardList podcasts={this.props.podcasts} onSelectPodcast={this.props.selectPodcast}/>
                 </div>
             </div>
         );

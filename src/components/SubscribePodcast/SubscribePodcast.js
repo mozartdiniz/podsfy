@@ -16,9 +16,13 @@ class SubscribePodcast extends Component {
     }
 
     render() {
+        const initialFragment = (!this.props.thereArePodcasts)
+            ? <h3>You have no subscriptions</h3>
+            : null;
+
         return (
             <div>
-                <h3>You have no subscriptions</h3>
+                { initialFragment }
                 <p>Paste the feed URL to add a new podcast to your library</p>
                 <input type="text" onChange={this.setFeedURL}/>
                 <button onClick={() => { this.props.subscribePodcast(this.state.feedURL) }}>Add</button>
