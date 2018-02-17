@@ -1,4 +1,5 @@
 import * as actionTypes from '../actions/actionTypes';
+import uuid from 'uuid/v4';
 
 const initialState = {
     errorList: [],
@@ -9,7 +10,7 @@ const saveErrorMessage = (state, action) => {
     const errorList = [].concat(state.errorList);
 
     errorList.push({
-        id: new Date().getTime(),
+        id: uuid(),
         code,
         message,
     });

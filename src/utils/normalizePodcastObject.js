@@ -1,6 +1,8 @@
+import uuid from 'uuid/v4';
+
 const normalizePodcastObject = (feedItem, feedURL) => {
     return {
-        id: new Date().getTime(), // Replace this for a UUID or something
+        id: uuid(),
         feedURL,
         ...extractItunesTAGS(feedItem),
     }
