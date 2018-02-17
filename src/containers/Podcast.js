@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import EpisodeList from '../components/EpisodeList/EpisodeList';
+import Loader from '../components/Loader/Loader';
 
 import * as actions from '../store/actions/index';
 
@@ -9,18 +10,27 @@ import style from '../App.css';
 
 class PodcastScreen extends Component {
     componentDidMount() {
-        this.props.selectPodcastEpisodes(this.props.match.params.id);
+        if (this.props.library.length) {
+            return;
+        }
+
+        this.props.loadRemoteLibrary();
     }
 
     render () {
-        const episodeList = (this.props.episodes.length)
-            ? <EpisodeList episodes={this.props.episodes} onSelectEpisode={this.props.playEpisode}/>
+        const selectedPodcast = this.props.library.filter((podcast) => podcast.id === this.props.match.params.id);
+        const selectedEpisodes = this.props.episodes.filter((episode) => episode.podcast_id === this.props.match.params.id);
+        const podcast = (selectedPodcast && selectedPodcast.length) ? selectedPodcast[0] : {};
+        const episodeList = (selectedEpisodes.length)
+            ? <EpisodeList episodes={selectedEpisodes} onSelectEpisode={this.props.playEpisode}/>
             : null;
 
         return (
             <div className={style.ContainerWrapper}>
                 <div className={style.MainContent}>
-                    <h1>{ this.props.podcast.title }</h1>
+                    <Loader show={!selectedEpisodes.length} />
+                    <h1>{ podcast.name }</h1>
+                    <p>{ podcast.description }</p>
                     { episodeList }
                 </div>
             </div>
@@ -30,8 +40,8 @@ class PodcastScreen extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        episodes: state.episode.selectedEpisodes,
-        podcast: state.podcast.selectedPodcast,
+        episodes: state.episode.episodes,
+        library: state.podcast.library,
         episode: state.episode.selectedEpisode,
         playing: state.player.playing,
     };
@@ -39,11 +49,11 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch, getState) => {
     return {
-        selectPodcastEpisodes: (podcastId) => dispatch(actions.selectPodcastEpisodes(podcastId)),
         playEpisode: (episode) => {
             dispatch(actions.selectPodcastEpisode(episode));
             dispatch(actions.playPodcastEpisode(episode));
         },
+        loadRemoteLibrary: () => dispatch(actions.loadRemoteLibrary()),
     }
 }
 

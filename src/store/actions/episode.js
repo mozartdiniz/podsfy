@@ -26,11 +26,6 @@ export const savePodcastEpisodes = (episodes) => ({
     episodes,
 });
 
-export const selectPodcastEpisodes = (podcastId) => ({
-    type: actionTypes.SELECT_PODCAST_EPISODES,
-    podcastId,
-});
-
 export const selectPodcastEpisode = (episode) => ({
     type: actionTypes.SELECT_PODCAST_EPISODE,
     episode,
