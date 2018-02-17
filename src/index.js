@@ -16,6 +16,7 @@ import episodeReducer from './store/reducers/episode';
 import playerReducer from './store/reducers/player';
 import podcastReducer from './store/reducers/podcast';
 import authReducer from './store/reducers/auth';
+import errorHandler from './store/reducers/errorHandler';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
@@ -24,6 +25,7 @@ const rootReducer = combineReducers({
     player: playerReducer,
     podcast: podcastReducer,
     auth: authReducer,
+    error: errorHandler,
 });
 
 const store = createStore(rootReducer, composeEnhancers(

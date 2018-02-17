@@ -1,12 +1,17 @@
 import * as actionTypes from './actionTypes';
+import { throwError } from './errorHandler';
 
 import loadFeed from '../../utils/loadFeed';
 
 export const loadPodcastFromFeedURL = (feedURL) => {
     return (dispatch) => {
-        loadFeed(feedURL).then((podcast) => {
-            dispatch(subscribePodcast(podcast));
-        });
+        loadFeed(feedURL)
+            .then((podcast) => {
+                dispatch(subscribePodcast(podcast));
+            })
+            .catch((error) => {
+                dispatch(throwError(error.message));
+            });
     }
 };
 

@@ -15,7 +15,7 @@ const loadFeed = (feedURL) => {
                 podcast: normalizePodcastObject(items[0], feedURL),
                 episodes: items.map((item) => normalizeEpisodeObject(item)),
             };
-        }).catch(error => console.error('error: ', error));
+        });
 }
 
 export default loadFeed;

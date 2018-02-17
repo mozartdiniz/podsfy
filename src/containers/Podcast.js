@@ -13,11 +13,15 @@ class PodcastScreen extends Component {
     }
 
     render () {
+        const episodeList = (this.props.episodes.length)
+            ? <EpisodeList episodes={this.props.episodes} onSelectEpisode={this.props.playEpisode}/>
+            : null;
+
         return (
             <div className={style.ContainerWrapper}>
                 <div className={style.MainContent}>
                     <h1>{ this.props.podcast.title }</h1>
-                    <EpisodeList episodes={this.props.episodes} onSelectEpisode={this.props.playEpisode}/>
+                    { episodeList }
                 </div>
             </div>
         );

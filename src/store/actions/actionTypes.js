@@ -13,3 +13,4 @@ export const CREATE_USER = 'CREATE_USER';
 export const STORE_USER = 'STORE_USER';
 
 export const THROW_ERROR = 'THROW_ERROR';
+export const DISMISS_ERROR = 'DISMISS_ERROR';

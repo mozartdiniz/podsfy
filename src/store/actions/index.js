@@ -20,3 +20,8 @@ export {
     loadLibrary,
     selectPodcast,
 } from './podcast';
+export {
+    throwError,
+    saveErrorMessage,
+    dismissErrorMessages,
+} from './errorHandler'

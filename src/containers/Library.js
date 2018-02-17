@@ -10,12 +10,16 @@ import style from '../App.css';
 
 class LibraryScreen extends Component {
     render () {
+        const cardList = (this.props.podcasts.length)
+            ? <PodcastCardList podcasts={this.props.podcasts} onSelectPodcast={this.props.selectPodcast}/>
+            : null;
+
         return (
             <div className={style.ContainerWrapper}>
                 <div className={style.MainContent}>
                     <h1>Library</h1>
                     <SubscribePodcast thereArePodcasts={this.props.podcasts.length}/>
-                    <PodcastCardList podcasts={this.props.podcasts} onSelectPodcast={this.props.selectPodcast}/>
+                    { cardList }
                 </div>
             </div>
         );
