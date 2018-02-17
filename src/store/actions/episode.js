@@ -1,6 +1,8 @@
 import * as actionTypes from './actionTypes';
 
 import loadFeed from '../../utils/loadFeed';
+import database from '../../conf/firebase';
+
 import { selectPodcast } from './podcast';
 
 export const loadPodcastInfo = (podcastId) => {
@@ -13,6 +15,11 @@ export const loadPodcastInfo = (podcastId) => {
         });
     }
 };
+
+export const addEpisodesToFirebase = (userId, podcastId, episodes, errorHandler) => {
+    const firebaseEpisodes = database.ref(`/library/${userId}/podcasts/${podcastId}/episodes`);
+    firebaseEpisodes.set(episodes).catch(errorHandler);
+}
 
 export const savePodcastEpisodes = (episodes) => ({
     type: actionTypes.SAVE_PODCAST_EPISODES,

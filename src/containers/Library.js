@@ -11,7 +11,9 @@ import style from '../App.css';
 
 class LibraryScreen extends Component {
     componentDidMount() {
-        this.props.loadRemoteLibrary();
+        if (!this.props.podcasts.length) {
+            this.props.loadRemoteLibrary();
+        }
     }
 
     render () {
@@ -25,7 +27,7 @@ class LibraryScreen extends Component {
                     <h1>Library</h1>
                     <SubscribePodcast thereArePodcasts={this.props.podcasts.length}/>
                     <div className={style.LoaderWrapper}>
-                        <Loader show={!this.props.podcasts.length} />
+                        <Loader show={!this.props.podcasts.length && this.props.loading} />
                     </div>
                     { cardList }
                 </div>
@@ -37,6 +39,7 @@ class LibraryScreen extends Component {
 const mapStateToProps = (state) => {
     return {
         podcasts: state.podcast.library,
+        loading: state.podcast.loadingFromFirebase,
         podcast: state.podcast.selectedPodcast,
         episode: state.episode.selectedEpisode,
         playing: state.player.playing,
