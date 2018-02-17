@@ -14,10 +14,11 @@ const menu = (props) => (
             }
         </div>
         <div>Logo maybe</div>
-        <MenuItem label="Profile"    link="/"/>
-        <MenuItem label="Home"       link="/"/>
+        {/* Uncomment when it make sense */}
+        {/* <MenuItem label="Profile"    link="/"/> */}
+        {/* <MenuItem label="Home"       link="/"/> */}
         <MenuItem label="Library"    link="/"/>
-        <MenuItem label="Categories" link="/"/>
+        {/* <MenuItem label="Categories" link="/"/> */}
     </div>
 );
 

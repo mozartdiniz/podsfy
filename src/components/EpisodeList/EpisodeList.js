@@ -6,7 +6,7 @@ const episodeList = (props) => (
     <div>
         { props.episodes.map((episode) =>
             <EpisodeListItem
-                key={episode.title}
+                key={episode.id}
                 episode={episode}
                 onSelectEpisode={props.onSelectEpisode}
             />)

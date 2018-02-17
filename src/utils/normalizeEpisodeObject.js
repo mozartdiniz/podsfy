@@ -1,6 +1,9 @@
+import uuid from 'uuid/v4';
+
 const normalizeEpisodeObject = (podcast, episodeFromFeed) => {
     const { title, description, summary, date, pubdate } = episodeFromFeed;
     const normalizedEpisode = {
+        id: uuid(),
         title,
         description,
         summary,

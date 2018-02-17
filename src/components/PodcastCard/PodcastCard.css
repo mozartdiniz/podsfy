@@ -8,6 +8,13 @@
     box-shadow: 1px 1px 6px rgba(0,0,0,0.16);
 }
 
+.PodcastCard .ThumbContainer {
+    width: 150px;
+    background-color: #f1f1f1;
+    height: 150px;
+    overflow: hidden;
+}
+
 .PodcastCard img {
     width: 150px;
 }
