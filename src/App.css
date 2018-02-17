@@ -36,3 +36,10 @@ h2 {
     flex-basis: auto;
     align-self: auto;
 }
+
+.MainContent .LoaderWrapper {
+    position: relative;
+    float: left;
+    width: 100%;
+    box-sizing: border-box;
+}

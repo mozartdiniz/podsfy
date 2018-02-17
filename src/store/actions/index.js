@@ -16,6 +16,7 @@ export {
     logoutUser,
 } from './auth';
 export {
+    loadRemoteLibrary,
     loadPodcastFromFeedURL,
     loadLibrary,
     selectPodcast,

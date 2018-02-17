@@ -31,11 +31,17 @@ const selectPodcast = (state, action) => {
     }
 };
 
+const saveRemoteLibrary = (state, action) => ({
+    ...state,
+    library: action.podcasts,
+})
+
 const reducer = (state = initialState, action) => {
     switch(action.type) {
         case actionTypes.SUBSCRIBE_PODCAST: return subscribePodcast(state, action);
         case actionTypes.LOAD_LIBRARY: return loadLibrary(state, action);
         case actionTypes.SELECT_PODCAST: return selectPodcast(state, action);
+        case actionTypes.SAVE_PODCASTS: return saveRemoteLibrary(state, action);
         default: return state;
     }
 }
