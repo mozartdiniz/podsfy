@@ -9,7 +9,7 @@ import style from '../App.css';
 
 class PodcastScreen extends Component {
     componentDidMount() {
-        this.props.loadPodcastInfo(this.props.match.params.id);
+        this.props.selectPodcastEpisodes(this.props.match.params.id);
     }
 
     render () {
@@ -30,7 +30,7 @@ class PodcastScreen extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        episodes: state.episode.episodes,
+        episodes: state.episode.selectedEpisodes,
         podcast: state.podcast.selectedPodcast,
         episode: state.episode.selectedEpisode,
         playing: state.player.playing,
@@ -39,7 +39,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch, getState) => {
     return {
-        loadPodcastInfo: (podcastId) => dispatch(actions.loadPodcastInfo(podcastId)),
+        selectPodcastEpisodes: (podcastId) => dispatch(actions.selectPodcastEpisodes(podcastId)),
         playEpisode: (episode) => {
             dispatch(actions.selectPodcastEpisode(episode));
             dispatch(actions.playPodcastEpisode(episode));

@@ -4,14 +4,12 @@ import { connect } from 'react-redux';
 import PodcastCardList from '../components/PodcastCardList/PodcastCardList';
 import SubscribePodcast from '../components/SubscribePodcast/SubscribePodcast';
 
-import * as actions from '../store/actions/index';
-
 import style from '../App.css';
 
 class LibraryScreen extends Component {
     render () {
         const cardList = (this.props.podcasts.length)
-            ? <PodcastCardList podcasts={this.props.podcasts} onSelectPodcast={this.props.selectPodcast}/>
+            ? <PodcastCardList podcasts={this.props.podcasts} />
             : null;
 
         return (
@@ -36,12 +34,7 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = (dispatch) => {
-    return {
-        selectPodcast: (podcastId) => {
-            dispatch(actions.selectPodcast(podcastId));
-            dispatch(actions.selectPodcastEpisodes(podcastId));
-        },
-    }
+    return {}
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(LibraryScreen);

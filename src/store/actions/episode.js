@@ -14,23 +14,17 @@ export const loadPodcastInfo = (podcastId) => {
     }
 };
 
-export const savePodcastEpisodes = (episodes) => {
-    return {
-        type: actionTypes.SAVE_PODCAST_EPISODES,
-        episodes,
-    };
-};
+export const savePodcastEpisodes = (episodes) => ({
+    type: actionTypes.SAVE_PODCAST_EPISODES,
+    episodes,
+});
 
-export const selectPodcastEpisodes = (podcastId) => {
-    return {
-        type: actionTypes.SELECT_PODCAST_EPISODES,
-        podcastId,
-    };
-};
+export const selectPodcastEpisodes = (podcastId) => ({
+    type: actionTypes.SELECT_PODCAST_EPISODES,
+    podcastId,
+});
 
-export const selectPodcastEpisode = (episode) => {
-    return {
-        type: actionTypes.SELECT_PODCAST_EPISODE,
-        episode,
-    };
-};
+export const selectPodcastEpisode = (episode) => ({
+    type: actionTypes.SELECT_PODCAST_EPISODE,
+    episode,
+});

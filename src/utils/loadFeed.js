@@ -8,10 +8,15 @@ const loadFeed = (feedURL) => {
     const url = `${URLs.gateway}${feedURL}`;
 
     return feedparser.parse(url)
-        .then((items) => ({
-            podcast: normalizePodcastObject(items[0], feedURL),
-            episodes: items.map((item) => normalizeEpisodeObject(item)),
-        }));
+        .then((items) => {
+            const podcast = normalizePodcastObject(items[0], feedURL);
+            const episodes = items.map((item) => normalizeEpisodeObject(podcast, item));
+
+            return {
+                podcast,
+                episodes,
+            }
+        });
 }
 
 export default loadFeed;

@@ -7,7 +7,7 @@ const initialState = {
 };
 
 const subscribePodcast = (state, action) => {
-    const { podcast } = action.podcast;
+    const { podcast } = action;
     const library = [].concat(state.library);
 
     library.push(podcast);

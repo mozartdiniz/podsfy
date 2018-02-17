@@ -3,13 +3,16 @@ import { throwError } from './errorHandler';
 
 import loadFeed from '../../utils/loadFeed';
 
+import { savePodcastEpisodes } from './episode';
+
 export const loadPodcastFromFeedURL = (feedURL) => {
     return (dispatch) => {
         dispatch(loadLibrary());
 
         loadFeed(feedURL)
-            .then((podcast) => {
-                dispatch(subscribePodcast(podcast));
+            .then((data) => {
+                dispatch(subscribePodcast(data.podcast));
+                dispatch(savePodcastEpisodes(data.episodes));
             })
             .catch((error) => {
                 dispatch(throwError(error.message));
@@ -17,22 +20,16 @@ export const loadPodcastFromFeedURL = (feedURL) => {
     }
 };
 
-export const subscribePodcast = (podcast) => {
-    return {
-        type: actionTypes.SUBSCRIBE_PODCAST,
-        podcast,
-    };
-}
+export const subscribePodcast = (podcast) => ({
+    type: actionTypes.SUBSCRIBE_PODCAST,
+    podcast,
+});
 
-export const loadLibrary = () => {
-    return {
-        type: actionTypes.LOAD_LIBRARY,
-    };
-};
+export const loadLibrary = () => ({
+    type: actionTypes.LOAD_LIBRARY,
+});
 
-export const selectPodcast = (podcastId) => {
-    return {
-        type: actionTypes.SELECT_PODCAST,
-        podcastId,
-    };
-};
+export const selectPodcast = (podcastId) => ({
+    type: actionTypes.SELECT_PODCAST,
+    podcastId,
+});

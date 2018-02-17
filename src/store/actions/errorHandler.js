@@ -9,16 +9,12 @@ export const throwError = (message, code) => {
     }
 }
 
-export const saveErrorMessage = (message, code) => {
-    return {
-        type: actionTypes.THROW_ERROR,
-        message,
-        code,
-    }
-}
+export const saveErrorMessage = (message, code) => ({
+    type: actionTypes.THROW_ERROR,
+    message,
+    code,
+});
 
-export const dismissErrorMessages = () => {
-    return {
-        type: actionTypes.DISMISS_ERROR,
-    }
-}
+export const dismissErrorMessages = () => ({
+    type: actionTypes.DISMISS_ERROR,
+});

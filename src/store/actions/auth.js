@@ -3,20 +3,16 @@ import firebase from 'firebase';
 
 import { throwError } from './errorHandler';
 
-export const userIsAuthenticated = (uid) => {
-    return {
-        type: actionTypes.USER_IS_AUTHENTICATED,
-        uid,
-    };
-};
+export const userIsAuthenticated = (uid) => ({
+    type: actionTypes.USER_IS_AUTHENTICATED,
+    uid,
+});
 
-export const storeUser = (email, uid) => {
-    return {
-        type: actionTypes.STORE_USER,
-        email,
-        uid,
-    };
-}
+export const storeUser = (email, uid) => ({
+    type: actionTypes.STORE_USER,
+    email,
+    uid,
+});
 
 export const createUser = (email, password) => {
     return (dispatch) => {

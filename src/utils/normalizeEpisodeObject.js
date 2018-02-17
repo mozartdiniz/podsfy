@@ -1,4 +1,4 @@
-const normalizeEpisodeObject = (episodeFromFeed) => {
+const normalizeEpisodeObject = (podcast, episodeFromFeed) => {
     const { title, description, summary, date, pubdate } = episodeFromFeed;
     const normalizedEpisode = {
         title,
@@ -6,6 +6,7 @@ const normalizeEpisodeObject = (episodeFromFeed) => {
         summary,
         date,
         pubdate,
+        podcast_id: podcast.id,
         mp3URL: extractMP3URL(episodeFromFeed),
     }
 

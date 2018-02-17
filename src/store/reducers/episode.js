@@ -7,18 +7,24 @@ const initialState = {
     loading: false
 };
 
-const savePodcastEpisodes = (state, action) => ({
-    ...state,
-    episodes: action.episodes.map((episode) => ({
-        ...episode
-    })),
-});
+const savePodcastEpisodes = (state, action) => {
+    if (!action.episodes.length) {
+        return state;
+    }
+
+    const episodes = state.episodes.filter(
+        (episode) => episode.podcast_id !== action.episodes[0].podcast_id
+    );
+
+    return {
+        ...state,
+        episodes: episodes.concat(action.episodes),
+    }
+};
 
 const selectPodcastEpisodes = (state, action) => ({
     ...state,
-    selectedEpisodes: {
-        ...action.episode
-    },
+    selectedEpisodes: state.episodes.filter((episode) => episode.podcast_id === action.podcastId),
 });
 
 const selectPodcastEpisode = (state, action) => ({

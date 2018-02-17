@@ -8,7 +8,6 @@ const episodeList = (props) => (
         <PodcastCard
             podcast={podcast}
             key={podcast.id}
-            onSelectPodcast={props.onSelectPodcast}
         />) : null }
     </div>
 );
