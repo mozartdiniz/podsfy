@@ -1,7 +1,7 @@
 .FormContainer {
     position: relative;
     float: left;
-    padding: 10px;
+    padding: 10px 6px;
     width: 100%;
     box-sizing: border-box;
 }
@@ -15,6 +15,9 @@
 .FormContainer input[type="text"] {
     padding: 10px;
     font-size: 14px;
+    width: calc(100% - 200px);
+    margin: 0;
+    border: 1px solid gainsboro;
 }
 
 .FormContainer > * {

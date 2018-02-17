@@ -30,7 +30,7 @@ class PodcastScreen extends Component {
                 <div className={style.MainContent}>
                     <Loader show={!selectedEpisodes.length} />
                     <h1>{ podcast.name }</h1>
-                    <p>{ podcast.description }</p>
+                    <h3>{ podcast.description }</h3>
                     { episodeList }
                 </div>
             </div>

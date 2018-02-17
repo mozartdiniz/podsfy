@@ -1,10 +1,13 @@
-h1 {
+h1, h2, h3 {
     font-weight: 100;
     margin: 7px;
 }
 
-h2 {
-    font-weight: 100;
+h3 {
+    color: gray;
+    margin: 7px 7px 20px 7px;
+    font-size: 16px;
+    line-height: 23px;
 }
 
 .ContainerWrapper {

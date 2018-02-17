@@ -38,10 +38,15 @@ class SubscribePodcast extends Component {
             <div>
                 { initialFragment }
                 <div className={style.FormContainer}>
-                    <input type="text" value={this.state.feedURL} onChange={this.setFeedURL} />
+                    <input
+                        type="text"
+                        value={this.state.feedURL}
+                        onChange={this.setFeedURL}
+                        placeholder="http://podcastfeed.xml"
+                    />
                     <button
                         onClick={ this.subscribePodcastButtonHandler }
-                        >Add</button>
+                        >Add Podcast</button>
                     <div className={style.LoaderPlacement}>
                         <Loader show={this.props.isLoadingPodcast} />
                     </div>
