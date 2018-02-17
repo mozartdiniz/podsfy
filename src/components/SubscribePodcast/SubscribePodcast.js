@@ -3,6 +3,9 @@ import { connect } from 'react-redux';
 
 import * as actions from '../../store/actions/index';
 
+import style from './SubscribePodcast.css';
+import Loader from '../Loader/Loader';
+
 class SubscribePodcast extends Component {
     state = {
         feedURL: '',
@@ -15,24 +18,43 @@ class SubscribePodcast extends Component {
         });
     }
 
+    subscribePodcastButtonHandler = () => {
+        this.props.subscribePodcast(this.state.feedURL);
+        this.setState({
+            ...this.state,
+            feedURL: '',
+        });
+    }
+
     render() {
         const initialFragment = (!this.props.thereArePodcasts)
-            ? <h3>You have no subscriptions</h3>
+            ? <span>
+                <h3>You have no subscriptions</h3>
+                <p>Paste the feed URL to add a new podcast to your library</p>
+              </span>
             : null;
 
         return (
             <div>
                 { initialFragment }
-                <p>Paste the feed URL to add a new podcast to your library</p>
-                <input type="text" onChange={this.setFeedURL}/>
-                <button onClick={() => { this.props.subscribePodcast(this.state.feedURL) }}>Add</button>
+                <div className={style.FormContainer}>
+                    <input type="text" value={this.state.feedURL} onChange={this.setFeedURL} />
+                    <button
+                        onClick={ this.subscribePodcastButtonHandler }
+                        >Add</button>
+                    <div className={style.LoaderPlacement}>
+                        <Loader show={this.props.isLoadingPodcast} />
+                    </div>
+                </div>
             </div>
         );
     }
 };
 
 const mapStateToProps = (state) => {
-    return {};
+    return {
+        isLoadingPodcast: state.podcast.loading,
+    };
 }
 
 const mapDispatchToProps = (dispatch) => {

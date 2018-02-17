@@ -18,7 +18,10 @@ const subscribePodcast = (state, action) => {
     }
 };
 
-const loadLibrary = (state, action) => state;
+const loadLibrary = (state, action) => ({
+    ...state,
+    loading: true,
+});
 
 const selectPodcast = (state, action) => {
     const podcast = state.library.filter((podcast) => podcast.id === action.podcastId)[0];

@@ -5,6 +5,8 @@ import loadFeed from '../../utils/loadFeed';
 
 export const loadPodcastFromFeedURL = (feedURL) => {
     return (dispatch) => {
+        dispatch(loadLibrary());
+
         loadFeed(feedURL)
             .then((podcast) => {
                 dispatch(subscribePodcast(podcast));
