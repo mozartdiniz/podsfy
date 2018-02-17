@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 
 import * as actions from '../store/actions/index';
 
+import ErrorList from '../components/ErrorList/ErrorList';
+
 class LoginScreen extends Component {
     state = {
         email: '',
@@ -30,6 +32,7 @@ class LoginScreen extends Component {
     render() {
         return (
             <div>
+                <ErrorList errors={this.props.errors} />
                 Email: <input type="text" autoComplete="new-password" onChange={this.setEmail}/> <br />
                 Password: <input type="password" autoComplete="new-password" onChange={this.setPassword}/> <br />
                 <button onClick={() => {this.props.login(this.state.email, this.state.password)}}>
@@ -43,6 +46,7 @@ class LoginScreen extends Component {
 const mapStateToProps = (state) => {
     return {
         userIsAuthenticated: state.auth.userIsAuthenticated,
+        errors: state.error.errorList,
     };
 }
 

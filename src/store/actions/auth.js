@@ -1,6 +1,8 @@
 import * as actionTypes from './actionTypes';
 import firebase from 'firebase';
 
+import { throwError } from './errorHandler';
+
 export const userIsAuthenticated = (uid) => {
     return {
         type: actionTypes.USER_IS_AUTHENTICATED,
@@ -25,7 +27,7 @@ export const createUser = (email, password) => {
 
             dispatch(storeUser(email, uid));
         }).catch((error) => {
-            console.log(error);
+            dispatch(throwError(error.code, error.message));
         });
     }
 };
@@ -50,7 +52,7 @@ export const loginUser = (email, password) => {
             if (error.code === 'auth/user-not-found') {
                 dispatch(createUser(email, password));
             } else {
-                console.log(error.code);
+                dispatch(throwError(error.code, error.message));
             }
         });
     }
@@ -61,7 +63,7 @@ export const logoutUser = () => {
         firebase.auth().signOut().then(() => {
             dispatch(userIsAuthenticated());
         }).catch((error) => {
-            console.log(error.code, error.message);
+            dispatch(throwError(error.code, error.message));
         });
     }
 };

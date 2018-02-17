@@ -12,5 +12,6 @@ export const USER_IS_AUTHENTICATED = 'USER_IS_AUTHENTICATED';
 export const CREATE_USER = 'CREATE_USER';
 export const STORE_USER = 'STORE_USER';
 
+// Error handler actions
 export const THROW_ERROR = 'THROW_ERROR';
 export const DISMISS_ERROR = 'DISMISS_ERROR';

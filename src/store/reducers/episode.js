@@ -3,7 +3,7 @@ import * as actionTypes from '../actions/actionTypes';
 const initialState = {
     episodes: [],
     selectedEpisodes: [],
-    selectedEpisode: {},
+    selectedEpisode: null,
     loading: false
 };
 

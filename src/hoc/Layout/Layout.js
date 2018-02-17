@@ -18,6 +18,13 @@ class Layout extends Component {
             );
         }
 
+        const player = (this.props.episode)
+            ? <Player
+                    podcast={this.props.podcast}
+                    episode={this.props.episode}
+              />
+            : null;
+
         return(
             <div className={styles.Layout}>
                 <ErrorList errors={this.props.errors} />
@@ -25,11 +32,9 @@ class Layout extends Component {
                     userIsAuthenticated={this.props.userIsAuthenticated}
                     logoutAction={this.props.logout}
                 />
-                {this.props.children}
-                <Player
-                    podcast={this.props.podcast}
-                    episode={this.props.episode}
-                />
+
+                { this.props.children }
+                { player }
             </div>
         );
     }
