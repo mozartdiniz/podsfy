@@ -7,8 +7,8 @@ const menuItem = (props) => (
     <NavLink
         to={props.link}
         className={styles.MenuItem}>
-
-        <div>Icon</div>
+        {/* Icons for menu items */}
+        {/* <div>Icon</div> */}
         <div>{ props.label }</div>
 
     </NavLink>

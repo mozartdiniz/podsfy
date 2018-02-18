@@ -30,7 +30,7 @@ class SubscribePodcast extends Component {
         const initialFragment = (!this.props.thereArePodcasts)
             ? <span>
                 <h3>You have no subscriptions</h3>
-                <p>Paste the feed URL to add a new podcast to your library</p>
+                <p className={style.TextInstructions}>Paste the feed URL to add a new podcast to your library</p>
               </span>
             : null;
 
