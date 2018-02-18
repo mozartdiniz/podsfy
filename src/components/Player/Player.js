@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import * as actions from '../../store/actions/index';
-
 import style from './Player.css';
 
 class Player extends Component {

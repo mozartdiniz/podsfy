@@ -7,7 +7,7 @@ import styles from './Layout.css';
 
 import Player from '../../components/Player/Player';
 import Menu from '../../components/Menu/Menu';
-import Login from '../../containers/Login';
+import Login from '../../containers/Login/Login';
 import ErrorList from '../../components/ErrorList/ErrorList';
 
 class Layout extends Component {
