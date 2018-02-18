@@ -1,7 +1,7 @@
 import uuid from 'uuid/v4';
 import strip from 'strip';
 
-const normalizeEpisodeObject = (podcast, episodeFromFeed) => {
+export const normalizeEpisodeObject = (podcast, episodeFromFeed) => {
     const { title, description, summary, date, pubdate } = episodeFromFeed;
     const normalizedEpisode = {
         id: uuid(),
@@ -18,17 +18,17 @@ const normalizeEpisodeObject = (podcast, episodeFromFeed) => {
     return normalizedEpisode;
 }
 
-const extractMP3URL = (episodeFromFeed) => {
+export const extractMP3URL = (episodeFromFeed) => {
     const fromEnclosures = (episodeFromFeed.enclosures && episodeFromFeed.enclosures.length)
         ? episodeFromFeed.enclosures[0].url
         : null;
 
-    const fromGuid = episodeFromFeed.guid;
+    const fromGuid = episodeFromFeed.guid || null;
 
     return fromEnclosures || fromGuid;
 }
 
-const extractDuration = (episodeFromFeed) => {
+export const extractDuration = (episodeFromFeed) => {
     if (episodeFromFeed['itunes:duration']) {
         return episodeFromFeed['itunes:duration']['#'];
     }

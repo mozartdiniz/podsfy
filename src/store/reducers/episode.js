@@ -6,7 +6,7 @@ const initialState = {
     loading: false
 };
 
-const savePodcastEpisodes = (state, action) => {
+export const savePodcastEpisodes = (state, action) => {
     if (!action.episodes.length) {
         return state;
     }
