@@ -66,6 +66,10 @@ This application is a work in progress. The following features are the items whi
 - [ ] Mobile version
 - [ ] PWA
 
+# Demo
+
+https://podsfy-dev.firebaseapp.com/
+
 # Some Podcast feed URLs that will make your life easier
 
 ## English
