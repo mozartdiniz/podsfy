@@ -13,8 +13,8 @@ const subscribePodcast = (state, action) => {
 
     library.push(podcast);
     return {
+        ...state,
         library,
-        selectedPodcast: podcast,
         loading: false,
     }
 };
