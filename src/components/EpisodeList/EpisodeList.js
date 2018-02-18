@@ -8,6 +8,7 @@ const episodeList = (props) => (
             <EpisodeListItem
                 key={episode.id}
                 episode={episode}
+                podcast={props.podcast}
                 onSelectEpisode={props.onSelectEpisode}
             />)
         }

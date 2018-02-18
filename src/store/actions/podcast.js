@@ -103,7 +103,7 @@ export const loadLibraryFromFirebase = (loading) => ({
     loading,
 });
 
-export const selectPodcast = (podcastId) => ({
+export const selectPodcast = (podcast) => ({
     type: actionTypes.SELECT_PODCAST,
-    podcastId,
+    podcast,
 });

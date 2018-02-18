@@ -22,7 +22,7 @@ class PodcastScreen extends Component {
         const selectedEpisodes = this.props.episodes.filter((episode) => episode.podcast_id === this.props.match.params.id);
         const podcast = (selectedPodcast && selectedPodcast.length) ? selectedPodcast[0] : {};
         const episodeList = (selectedEpisodes.length)
-            ? <EpisodeList episodes={selectedEpisodes} onSelectEpisode={this.props.playEpisode}/>
+            ? <EpisodeList episodes={selectedEpisodes} podcast={podcast} onSelectEpisode={this.props.playEpisode}/>
             : null;
 
         return (
@@ -49,7 +49,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch, getState) => {
     return {
-        playEpisode: (episode) => {
+        playEpisode: (podcast, episode) => {
+            dispatch(actions.selectPodcast(podcast));
             dispatch(actions.selectPodcastEpisode(episode));
             dispatch(actions.playPodcastEpisode(episode));
         },

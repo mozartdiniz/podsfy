@@ -7,3 +7,41 @@
     flex-basis: 200px;
     align-self: auto;
 }
+
+.ScrollArea {
+    width: 300px;
+    height: 100vh;
+    overflow-y: scroll;
+}
+
+.ThumbWrapper {
+    width: 280px;
+    height: 280px;
+    margin: 10px;
+}
+
+.Thumb {
+    width: 100%;
+}
+
+.PodcastName {
+    text-align: center;
+    font-size: 14px;
+}
+
+.EpisodeTitle {
+    margin: 0 10px 7px 10px;
+}
+
+.EpisodeDescription {
+    word-wrap: break-word;
+    width: 280px;
+    padding: 10px;
+    font-size: 14px;
+    line-height: 18px;
+}
+
+.PlayerControls {
+    height: 75px;
+    width: 100%;
+}

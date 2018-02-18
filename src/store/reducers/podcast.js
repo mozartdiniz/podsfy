@@ -30,10 +30,9 @@ const loadLibraryFromFirebase = (state, action) => ({
 });
 
 const selectPodcast = (state, action) => {
-    const podcast = state.library.filter((podcast) => podcast.id === action.podcastId)[0];
     return {
         ...state,
-        selectedPodcast: podcast,
+        selectedPodcast: action.podcast,
         loading: false,
     }
 };
