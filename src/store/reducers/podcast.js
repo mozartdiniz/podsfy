@@ -2,6 +2,7 @@ import * as actionTypes from '../actions/actionTypes';
 
 const initialState = {
     library: [],
+    searchResult: [],
     selectedPodcast: {},
     loading: false,
     loadingFromFirebase: false,
@@ -15,6 +16,15 @@ const subscribePodcast = (state, action) => {
     return {
         ...state,
         library,
+        loading: false,
+    }
+};
+
+const unsubscribePodcast = (state, action) => {
+    const libraryWithoutPodcast = state.library.filter((podcast) => podcast.id !== action.podcastId);
+    return {
+        ...state,
+        library: libraryWithoutPodcast,
         loading: false,
     }
 };
@@ -42,7 +52,12 @@ const saveRemoteLibrary = (state, action) => ({
     library: action.podcasts,
     loading: false,
     loadingFromFirebase: false,
-})
+});
+
+const saveSearchResults = (state, action) => ({
+    ...state,
+    searchResult: action.podcasts,
+});
 
 const reducer = (state = initialState, action) => {
     switch(action.type) {
@@ -51,6 +66,8 @@ const reducer = (state = initialState, action) => {
         case actionTypes.LOAD_LIBRARY_FROM_FIREBASE: return loadLibraryFromFirebase(state, action);
         case actionTypes.SELECT_PODCAST: return selectPodcast(state, action);
         case actionTypes.SAVE_PODCASTS: return saveRemoteLibrary(state, action);
+        case actionTypes.UNSUBSCRIBE_PODCAST: return unsubscribePodcast(state, action);
+        case actionTypes.SAVE_PODCAST_SEARCH_RESULTS: return saveSearchResults(state, action);
         default: return state;
     }
 }

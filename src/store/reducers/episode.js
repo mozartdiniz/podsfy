@@ -28,10 +28,16 @@ const selectPodcastEpisode = (state, action) => ({
     },
 });
 
+const cleanPodcastEpisodes = (state, action) => ({
+    ...state,
+    episodes: state.episodes.filter((episode) => episode.podcast_id !== action.podcastId),
+});
+
 const reducer = (state = initialState, action) => {
     switch(action.type) {
         case actionTypes.SAVE_PODCAST_EPISODES: return savePodcastEpisodes(state, action);
         case actionTypes.SELECT_PODCAST_EPISODE: return selectPodcastEpisode(state, action);
+        case actionTypes.CLEAN_PODCAST_EPISODES: return cleanPodcastEpisodes(state, action);
         default: return state;
     }
 }

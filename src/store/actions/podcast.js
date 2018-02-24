@@ -3,6 +3,7 @@ import { throwError } from './errorHandler';
 
 import loadFeed from '../../utils/loadFeed';
 import database from '../../conf/firebase';
+import URLs from '../../conf/URLs';
 
 import { savePodcastEpisodes, addEpisodesToFirebase } from './episode';
 
@@ -106,4 +107,24 @@ export const loadLibraryFromFirebase = (loading) => ({
 export const selectPodcast = (podcast) => ({
     type: actionTypes.SELECT_PODCAST,
     podcast,
+});
+
+export const unsubscribePodcast = (podcast) => ({
+    type: actionTypes.SELECT_PODCAST,
+    podcast,
+});
+
+export const searchPodcast = (searchText) => (dispatch, getState) => {
+    fetch(`${URLs.podcast_search_api}find_podcast?name=${searchText}`)
+        .then((response) => {
+            return response.json();
+        })
+        .then((data) => {
+            dispatch(savePodcastSearchResults(data));
+        });
+};
+
+export const savePodcastSearchResults = (podcasts) => ({
+    type: actionTypes.SAVE_PODCAST_SEARCH_RESULTS,
+    podcasts,
 });

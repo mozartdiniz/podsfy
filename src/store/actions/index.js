@@ -19,6 +19,8 @@ export {
     loadPodcastFromFeedURL,
     loadLibrary,
     selectPodcast,
+    searchPodcast,
+    savePodcastSearchResults,
 } from './podcast';
 export {
     throwError,
